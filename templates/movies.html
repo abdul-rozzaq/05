@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Release date</th>
+            <th>Genre</th>
+        </tr>
+
+        {% for movie in movies %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.director }}</td>
+                <td>{{ movie.release_date }}</td>
+                <td>{{ movie.genre }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+
+        <button>Qo'shish</button>
+    </form>
+    
+{% endblock content %}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - Vazifa</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        .links {
+            padding: 1rem;
+            background-color: black;
+            color: white;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .links .link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            /* font-weight: bold; */
+            /* transition: .3s ease-in-out; */
+        }
+
+        .links .link:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 1rem;
+            display: flex;
+            gap: 3rem;
+
+            align-items: flex-start;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+
+        form {
+            /* font-size: 1; */
+        }
+
+        form p {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        input {
+            min-width: 200px;
+            display: inline-block;
+        }
+
+        input {
+            padding: .5rem;
+        }
+
+
+        button {
+            padding: .5rem;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="links">
+        <a class="link" href="{% url 'books_page' %}">Books</a>
+        <a class="link" href="{% url 'animals_page' %}">Animals</a>
+        <a class="link" href="{% url 'cars_page' %}">Cars</a>
+        <a class="link" href="{% url 'movies_page' %}">Movies</a>
+        <a class="link" href="{% url 'students_page' %}">Students</a>
+    </div>
+
+    <div class="content">
+
+        {% block content %}
+        {% endblock content %}
+
+    </div>
+
+</body>
+
+</html>

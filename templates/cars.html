@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>Cars</h1>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Max speed</th>
+            <th>Is Available</th>
+        </tr>
+        
+        {% for car in cars %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.max_speed }}</td>
+                <td>{{ car.is_available }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+
+        <button>Qo'shish</button>
+    </form>
+
+{% endblock content %}
